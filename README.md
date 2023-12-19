@@ -1,6 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 ![E-R Diagram](https://github.com/Leesha-1211/yoga-app/assets/120728017/4d647052-00ce-4a00-8b0b-25b9406813b3)
