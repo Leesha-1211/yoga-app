@@ -5,7 +5,25 @@ Frontend folder contains Admissionform.css,Admissionform.jsx,app.css,app.jsx,ind
 This React application consists of two components: App and AdmissionForm. The App component renders a background with a philosophical paragraph about yoga and includes the AdmissionForm component. The AdmissionForm component is a form where users can input their name, age, and select a yoga class batch. It performs basic client-side validation and makes an asynchronous POST request to a local server endpoint using Axios when the form is submitted. The server simulates a payment process, and the response is displayed as the payment status. Additionally, the form triggers toast notifications for successful or failed payments using the React Toastify library. The components are styled with CSS to create a visually appealing and user-friendly interface.
 
 ### BackEnd part of the website:
-Payment Service Logic: The CompletePayment function in paymentService.js simulates payment processing. It logs payment details, generates a random success/failure outcome, and returns a corresponding message.Express Server Setup: The Express server is set up in app.js with middleware for CORS and JSON body parsing.Enrollment Endpoint: There's a POST endpoint at /api/enroll to handle enrollment requests from the React front-end. It extracts name, age, and selectedBatch from the request body.Enrollment Processing: The server can perform custom enrollment logic (not specified in this code) and then calls CompletePayment to simulate payment processing.Response to Front-end: The server responds to the front-end with a JSON object containing a message based on the payment simulation outcome.Error Handling: Errors during enrollment or payment processing are logged, and appropriate error messages are sent to the front-end.Server Start: The server listens on port 3001, and a message is logged upon successful start.Vercel Configuration: The vercel.json file specifies the build and deployment configuration for Vercel, ensuring that all JavaScript files are handled by the @vercel/node runtime.Wildcard Route: The Vercel configuration includes a wildcard route to redirect all routes to the root, simplifying deployment for a single-page application.Overall Purpose: This backend serves as a mock server for handling enrollment and payment simulation for a React application, providing a foundation for further development and integration with a real payment gateway in a production environment.
+Payment Service Logic: The CompletePayment function in paymentService.js simulates payment processing. It logs payment details, generates a random success/failure outcome, and returns a corresponding message.
+
+Express Server Setup: The Express server is set up in app.js with middleware for CORS and JSON body parsing.
+
+Enrollment Endpoint: There's a POST endpoint at /api/enroll to handle enrollment requests from the React front-end. It extracts name, age, and selectedBatch from the request body.
+
+Enrollment Processing: The server can perform custom enrollment logic (not specified in this code) and then calls CompletePayment to simulate payment processing.
+
+Response to Front-end: The server responds to the front-end with a JSON object containing a message based on the payment simulation outcome.
+
+Error Handling: Errors during enrollment or payment processing are logged, and appropriate error messages are sent to the front-end.
+
+Server Start: The server listens on port 3001, and a message is logged upon successful start.
+
+Vercel Configuration: The vercel.json file specifies the build and deployment configuration for Vercel, ensuring that all JavaScript files are handled by the @vercel/node runtime.
+
+Wildcard Route: The Vercel configuration includes a wildcard route to redirect all routes to the root, simplifying deployment for a single-page application.
+
+Overall Purpose: This backend serves as a mock server for handling enrollment and payment simulation for a React application, providing a foundation for further development and integration with a real payment gateway in a production environment.
 
 ![E-R Diagram](https://github.com/Leesha-1211/yoga-app/assets/120728017/4d647052-00ce-4a00-8b0b-25b9406813b3)
 
