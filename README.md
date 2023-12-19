@@ -46,17 +46,29 @@ Terminal2 - npm run dev
 
 ## Create a Database
 Use your database credentials in  user: "root",
+
   password: "1234", 
+  
 In MySQL 
+
 "CREATE DATABASE yoga_class;
+
 USE yoga_class;
 
 CREATE TABLE enrollments (
+
   id INT AUTO_INCREMENT PRIMARY KEY,
+  
   name VARCHAR(255) NOT NULL,
+  
+  
   age INT NOT NULL,
+  
   selectedBatch VARCHAR(255) NOT NULL,
+  
   paymentStatus VARCHAR(255) NOT NULL
+  
+  
 );
 " 
 
