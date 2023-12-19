@@ -71,6 +71,7 @@ CREATE TABLE enrollments (
   
 );
 " 
-
+## MYSQL Demo
+![MYSQL](https://github.com/Leesha-1211/yoga-app/assets/120728017/63cb786a-f1fd-49bc-89c1-f9fa09806f11)
 
 
