@@ -1,0 +1,61 @@
+Change Server.js to this "const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const mysql = require("mysql2");
+const { CompletePayment } = require("./paymentService");
+
+const app = express();
+const port = 3001;
+
+app.use(cors());
+app.use(bodyParser.json());
+
+// Create a MySQL connection pool
+const pool = mysql.createPool({
+  host: "localhost",
+  user: "root",
+  password: "1234",
+  database: "yoga_class",
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+});
+
+app.post("/api/enroll", async (req, res) => {
+  try {
+    const { name, age, selectedBatch } = req.body;
+
+    // Call the CompletePayment function
+    const paymentResponse = await CompletePayment(name, selectedBatch);
+
+    // Store enrollment data in the MySQL database
+    pool.query(
+      "INSERT INTO enrollments (name, age, selectedBatch, paymentStatus) VALUES (?, ?, ?, ?)",
+      [name, age, selectedBatch, paymentResponse],
+      (error, results) => {
+        if (error) {
+          console.error("Error storing enrollment data:", error.message);
+          return res.status(500).json({
+            success: false,
+            message: "Internal server error. Please try again.",
+          });
+        }
+
+        // Return the response to the front-end
+        return res
+          .status(200)
+          .json({ success: true, message: paymentResponse });
+      }
+    );
+  } catch (error) {
+    console.error("Error processing enrollment:", error.message);
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error. Please try again.",
+    });
+  }
+});
+
+app.listen(port, () => {
+  console.log(Server is running on port ${port});
+});
