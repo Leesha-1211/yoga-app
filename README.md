@@ -28,5 +28,6 @@ Wildcard Route: The Vercel configuration includes a wildcard route to redirect a
 - **Feature 10:**
 Overall Purpose: This backend serves as a mock server for handling enrollment and payment simulation for a React application, providing a foundation for further development and integration with a real payment gateway in a production environment.
 
+## E-R Diagram
 ![E-R Diagram](https://github.com/Leesha-1211/yoga-app/assets/120728017/4d647052-00ce-4a00-8b0b-25b9406813b3)
 
