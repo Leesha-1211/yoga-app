@@ -31,3 +31,13 @@ Overall Purpose: This backend serves as a mock server for handling enrollment an
 ## E-R Diagram
 ![E-R Diagram](https://github.com/Leesha-1211/yoga-app/assets/120728017/4d647052-00ce-4a00-8b0b-25b9406813b3)
 
+##Implementation
+npm install
+npm install express body-parser
+npm install cors
+npm install axios
+Use Two terminals after these commands:
+Terminal1  - node server.js
+Terminal2 - npm run dev
+
+
